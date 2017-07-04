@@ -1,0 +1,26 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: "Microsoft Yahei", Helvetica, sans-serif, Lato;
+}
+
+.b-icons #b-change a{
+    font-size: 12px;
+    color:#fff;
+}
+.s-icons{
+    display: none;
+    /*display: none;*/
+}
+
+.s-icons .icon-bottom .dpic{
+    text-align: center;
+    list-style: none;
+    margin-left: 5px;
+}
+.s-icons .icon-bottom .dpic img{
+    float: left;
+    width: 40px;
+    height:40px;
+    cursor: pointer;
+}

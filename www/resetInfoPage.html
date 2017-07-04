@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css"/>
+    <title>资料修改</title>
+    <style>
+
+        .mydiv2 {
+            background-color: ghostwhite;
+            width: 100%;
+            height: 1px;
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            overflow: hidden;
+        }
+
+        textarea {
+            min-width: 150px;
+            max-width: 40%;
+            min-height: 120px;
+            max-height: 120px;
+            overflow: hidden;
+        }
+
+        .xing {
+            color: red;
+        }
+    </style>
+    <script src="resetInfoBD.js"></script>
+
+</head>
+<body>
+<div class="container form-horizontal" style="width: 100%;margin: auto;">
+    <div class="form-group container form-horizontal" style="width: 95%;margin: auto">
+        <h4 style="font-weight: bold;color: white">基本信息：</h4>
+        <div id='shangchuan' class="btn btn-primary">换个头像吧！</div>
+        <img id="touxiang" src='' style="width:100px ;height:100px">
+        <div style="width:200px;margin:12px;background:gray">
+            <div id='wancheng' style="background:green;width:0">0%</div>
+        </div>
+    </div>
+
+    <div class="form-group userId">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <label class="xing">*</label>
+            <span style="color: white">用户名：</span>
+        </label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <input type="text" id="userName" onblur="checkName()" class="form-control">
+            <div class="fontStyle" id="user_prompt">
+                <!--<p id="userp">昵称为必填项，请输入您的昵称</p>-->
+            </div>
+        </div>
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group sex">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <label class="xing">*</label>
+            <span style="color: white">性别：</span>
+        </label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <!--<input type="text" id="sex">-->
+            <div id="sex">
+                <span><input name="sex" style="width: 9%" type="radio" checked="checked" value="男">男 </span>
+                <span><input name="sex" style="width: 9%" type="radio" value="女"/>女 </span>
+            </div>
+        </div>
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group address">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <label class="xing">*</label>
+           <span style="color: white"> 地址：</span>
+        </label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8  ">
+            <!--国家-->
+            <select id="country" onchange="showCountry()" class=" btn  dropdown-toggle">
+                <option>中国</option>
+                <option>英国</option>
+                <option>美国</option>
+            </select>
+            <!--省份-->
+            <select id="selProvince" onchange="showCity()" class=" btn  dropdown-toggle">
+                <option id="provinces"></option>
+            </select>
+            <!--城市-->
+            <select id="selCity" class=" btn  dropdown-toggle">
+                <option id="city"></option>
+            </select>
+        </div>
+
+
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group phoneNumber">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <label class="xing">*</label>
+            <span style="color: white">手机号码：</span>
+        </label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <input type="text" id="phoneNumber" onblur="checkPhoneNum()" placeholder="请输入11位手机号码" class="form-control">
+            <div class="fontStyle" id="phoneNumber_prompt"></div>
+        </div>
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group email">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <label class="xing">*</label>
+            <span style="color: white">email：</span>
+        </label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <input type="text" id="email" onblur="checkEmail()" placeholder="请输入邮箱地址" class="form-control">
+            <div class="fontStyle" id="email_prompt">
+            </div>
+
+        </div>
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group idNumber">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <!--<label class="xing">*</label>-->
+            <span style="color: white">身份证号：</span>
+        </label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <input type="text" id="idNumber" onblur="checkIdNum()" placeholder="请输入15或18位身份证号" class="form-control">
+            <div class="fontStyle" id="idNumber_prompt"></div>
+        </div>
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group company">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right"><span style="color: white">公司：</span></label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <input type="text" id="company" maxlength=16 class="form-control">
+        </div>
+    </div>
+    <div class="mydiv2"></div>
+    <div class="form-group selfIntroduction">
+        <label class="col-lg-2 col-md-3 col-sm-4 col-xs-4 text-right">
+            <span style="color: white">个人简介：</span></label>
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+            <textarea type="text" id="selfIntroduction" maxlength=120 placeholder="请输入文本内容"></textarea>
+            <p><span id="text-count">120</span>/120</p>
+        </div>
+    </div>
+    <div>
+    </div>
+
+    <div  style="width: 95%;margin: auto">
+        <button type="submit" id="reset" style="font-size: 15px" class="pull-right  btn btn-primary">
+            提交修改
+        </button>
+    </div>
+</div>
+<div id="bottom" class="navbar navbar-default navbar-fixed-bottom ">
+    <div role="navigation">
+        <ul class="nav nav-tabs" id="bot">
+            <li><a href="index.html"><span><img src="images/shouye.png"></span><span>首页</span></a></li>
+            <li><a href="topicPage.html"><span><img src="images/remen.png"></span><span>话题</span></a></li>
+            <li><a href="putQuestion.html"><span><img src="images/sixing.png"></span><span>提问</span></a></li>
+            <li><a href="personalInfo.html"><span><img src="images/more.png"></span><span>资料</span></a></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<!--<script src="js/imageFile/jquery.file.js"></script>-->
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="resetInfoPage.js"></script>
+<script src="resetInfoBD.js"></script>
+<script src="gongyong.js"></script>
+<script src="boots.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

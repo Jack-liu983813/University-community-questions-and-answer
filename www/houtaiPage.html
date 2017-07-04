@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <title>后台页面</title>
+</head>
+<body>
+
+<div>
+    <h1 style="text-align: center;color: red">后台管理</h1>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#a1" data-toggle="tab">用户资料管理</a></li>
+        <li role="presentation"><a href="#a2" data-toggle="tab">问题信息管理</a></li>
+        <li role="presentation"><a href="#a3" data-toggle="tab">回复信息管理</a></li>
+    </ul>
+</div>
+<!--用户资料管理-->
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="a1">
+    <table class="table table-hover table-even" id="aa">
+        <tr id="tr">
+            <td id="userId">用户ID</td>
+            <td id="userName">用户名</td>
+            <td id="identity">用户类型</td>
+            <td id="gold">金币</td>
+            <td id="manages">管理1</td>
+            <td id="manage1">管理2</td>
+        </tr>
+        <!--<tr id="mpbox"></tr>-->
+    </table>
+ </div>
+
+
+<!--问题信息管理-->
+    <div class="tab-pane fade" id="a2">
+        <table class="table table-hover table-even" id="bb">
+            <tr id="tr1">
+                <td id="questionId">问题ID</td>
+                <td id="userName1">提问者姓名</td>
+                <!--<td id="headImage">用户头像</td>-->
+                <td id="questionTitle">提问标题</td>
+                <td id="questionContent">提问内容</td>
+                <td id="manage2">管理</td>
+            </tr>
+            <!--<tr id="mpbox1"></tr>-->
+        </table>
+    </div>
+
+
+<!--回复信息管理-->
+    <div class="tab-pane fade" id="a3">
+        <table class="table table-hover table-even" id="cc">
+            <tr id="tr2">
+                <td id="resId">回复ID</td>
+                <td id="userName2">回复者姓名</td>
+                <!--<td id="headImage">用户头像</td>-->
+                <td id="resContent">回复内容</td>
+                <td id="manage3">管理</td>
+            </tr>
+            <!--<tr id="mpbox"></tr>-->
+        </table>
+    </div>
+</div>
+<a href="#top" target="_self" class="navbar-fixed-bottom" style="margin-bottom: 70px;margin-left: 80%" id="back-to-top"><img src="images/hh.png" id="hh"></a>
+
+<div id="bottom"  class="navbar navbar-default navbar-fixed-bottom">
+    <div role="navigation">
+        <ul class="nav nav-tabs" id="bot">
+            <li><a href="index.html" ><span><img src="images/shouye.png"></span><span>首页</span></a></li>
+            <li><a href="topicPage.html"><span><img src="images/remen.png"></span><span>话题</span></a></li>
+            <li><a href="putQuestion.html"><span><img src="images/sixing.png"></span><span>提问</span></a></li>
+            <li><a href="personalInfo.html"><span><img src="images/more.png"></span><span>资料</span></a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="houtai.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $("#back-to-top").hide();
+        $(function() {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 100) {
+                    $("#back-to-top").fadeIn(150);
+                } else {
+                    $("#back-to-top").fadeOut(150);
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            $("#hh").click(function() {
+                $('body,html').animate({
+                            scrollTop: 0
+                        },
+                        500);
+                return false;
+            });
+        });
+    });
+
+
+</script>
+<script src="boots.js"></script>
+</body>
+</html>

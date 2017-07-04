@@ -1,0 +1,6 @@
+chmod +x app.sh
+
+./app.sh start
+
+
+ps aux | grep app

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的专家</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <style>
+        #middle{
+            width: 100%;
+            /*height: 500px;*/
+            margin: 0px auto;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background-color:#96C6F5;
+        }
+        input{
+            border: 0px;
+            background-color:ghostwhite;
+            text-align: center;width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+<div id="middle">
+    <h2 style="margin: 0px 20px;padding: 10px 0px;color:white">您的回复列表：</h2><hr>
+    <div style="display: none">
+        <div id="mingpian" style="border-bottom: 1px solid white;padding: 20px;line-height:30px" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div>
+                <div><span id="userName" style="color: yellow;"></span>
+                    <span style="font-family: 楷体;font-size: 16px;color: white">提出了:</span><span id="questionTitle" style="color: yellow"></span></div>
+                <!--提出了：-->
+                <!--<span id="questionTitle" style="color: yellow"></span>-->
+                <div><span style="font-family: 楷体;font-size: 16px;color: white">你回复了：</span><span id="resContent" style="color: yellow;"></span></div>
+                <div><span style="font-family: 楷体;font-size: 16px;color: white">问题方向：</span><span id="directionName" style="color: white"></span></div>
+                <div style="color: white"><span style="font-family: 楷体;font-size: 16px">回复时间：</span><span id="resDate"></span></div></div>
+        </div></div>
+    </div>
+    <div id="huifu" style="margin-bottom: 10px;">
+    </div>
+    <div style="text-align:center;clear:both;">
+
+    </div>
+<a href="#top" target="_self" class="navbar-fixed-bottom" style="margin-bottom: 70px;margin-left: 80%" id="back-to-top"><img src="images/hh.png" id="hh"></a>
+
+    <div id="bottom"  class="navbar navbar-default navbar-fixed-bottom ">
+        <div role="navigation">
+            <ul class="nav nav-tabs" id="bot">
+                <li><a href="index.html" ><span><img src="images/shouye.png"></span><span>首页</span></a></li>
+                <li><a href="topicPage.html"><span><img src="images/remen.png"></span><span>话题</span></a></li>
+                <li><a href="putQuestion.html"><span><img src="images/sixing.png"></span><span>提问</span></a></li>
+                <li><a href="personalInfo.html"><span><img src="images/more.png"></span><span>资料</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="responsePage.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#back-to-top").hide();
+        $(function() {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 100) {
+                    $("#back-to-top").fadeIn(150);
+                } else {
+                    $("#back-to-top").fadeOut(150);
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            $("#back-to-top").click(function() {
+                $('body,html').animate({
+                            scrollTop: 0
+                        },
+                        500);
+                return false;
+            });
+        });
+    });
+</script>
+<script src="boots.js"></script>
+</body>
+</html>

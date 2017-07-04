@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <title>提问页面</title>
+    <style>
+
+        ul li{
+            list-style-type: none;
+        }
+        #bot li img{
+            width:25px;
+            height:25px;
+        }
+        @media screen and (min-width:768px){
+            #bottom{display:none;}
+            .img{height: 350px}
+        }
+        @media screen and (max-width:768px){
+
+            #bottom{
+                display:block;
+                float:none;
+            }
+        }
+
+        li{ width: 25%; }
+
+        table{
+            text-align: center;
+        }
+        body{margin:0px}
+        #aaa{color: white;}
+    </style>
+    <script src="js/jquery-3.1.0.js"></script>
+<script>
+    $(function(){
+        $("#hhh").hide();
+        $("#zuijia").hide();
+        $("#btn").click(function(){
+
+            $("#hhh").show();
+        });
+        $("#submit").click(function() {
+
+            $("#hhh").hide();
+        });
+        $("#best").click(function() {
+            //只显示选中为最佳的按钮
+//            $("#zj #answer #best").not($(this)).remove();
+//            $("#zj #answer #best").parent().children().show();
+            $("#zj #answer #best").not($(this)).remove();
+            $("#zj #answer #best").parent().children().show();
+            $("#zj #answer #best").parent().children().remove("#resId");
+            //将按钮隐藏
+            $(this).hide();
+            $("#answer").hide();
+            $("#hhh").hide();
+//            $("#zj #best").parents().children($(this)).css("background-color", "blue");
+
+        });
+    });
+    $(document).ready(function() {
+        $("#back-to-top").hide();
+        $(function() {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 100) {
+                    $("#back-to-top").fadeIn(150);
+                } else {
+                    $("#back-to-top").fadeOut(150);
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            $("#back-to-top").click(function() {
+                $('body,html').animate({
+                            scrollTop: 0
+                        },
+                        500);
+                return false;
+            });
+        });
+    });
+
+</script>
+</head>
+<body>
+
+<div class="container" >
+    <!--<div class="row">-->
+<div class="nav navbar-nav" style="margin-left: 10px;margin-top: 10px;width: 100%" id="aaa" >
+<div id="question" style="width: 100%;"  class="input-group">
+    <div class="btn btn-info" type="button" style="float: left;margin-left: 8px">
+        类型：<span class="badge"><span  id="directionName" style="color: blue;"></span></span>
+    </div>
+    <!--<span style="float: left;margin-top: 8px">类型：<span  id="direction" style="color: blue;"></span></span>-->
+
+
+    <div class="input-group myclass" style="margin-left: 50px">
+
+        <h4 style="font-weight: bold">
+            <span id="questionId" style="display: none"></span>
+           <img id="touxiang" src='' style="width: 35px;height: 35px;border-radius:50%;"> <span id="questionTitle"></span>
+        </h4>
+    </div>
+    <div>
+        <span style="margin-left: 50px">问题详细：</span><br><span id="questionContent" style="margin-left: 100px ;width:300px ;height:200px;font-weight: bold"></span><br>
+    </div>
+    <div>
+        <span style="margin-left: 50px">金币数：<span  id="gold1" style="color:#ec971f;"></span></span><br>
+        <span style="margin-left: 50px">提问者：<span id="userName"></span></span>
+    </div>
+        <div>
+        <span class="" style="color: white;margin-left: 50px">发布于：<span id="questionDate"></span></span><br>
+        <a href="" id="fujian" style="color: yellow;margin-left: 50px">上传的附件</a>
+            <div class="list-services border-bot img-indent-bot jiathis_style_24x24" style="margin-left: 45%">
+                <span style="float: left;">分享到：</span>
+                <a class="jiathis_button_qzone"></a>
+                <a class="jiathis_button_tsina"></a>
+                <a class="jiathis_button_tqq"></a>
+                <a class="jiathis_button_weixin"></a>
+                <a class="jiathis_button_renren"></a>
+                <!--<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>-->
+                <!--<a class="jiathis_counter_style"></a>-->
+            </div>
+            <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+            <script src="test2.js"></script>
+    </div>
+
+    <br/>
+    <a href="#"><button type="button" class="label label-info" style="margin-left: 70%" id="btn">回复</button></a>
+    <hr style="border:1px solid #ccc; width:100%; margin-top: 5px"/>
+</div>
+</div>
+
+    <div id="hhh" class="container">
+        <div class="row">
+            <div class="ptl" id="con">
+                <div class="panel panel-default panel-page">
+                    <div style="height: 40px">
+                        <span style=" font-family: 微软雅黑;font-size: 25px;font-weight: bold;color:#2e6da4;line-height: 40px;">你的回复:</span>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+
+                        <tr>
+                            <td><span style="font-family:楷体; color:#8a6d3b">回复：</span></td>
+                            <td><textarea style="height:100px;width:80%" id="area"></textarea><div id="nameDiv" style="font-family: 楷体; color:#8a6d3b;font-size:10px"></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button style="background:#2e6da4;color:#fff;" type="submit" id="submit" class="btn btn-fat btn-large">确定</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zj">
+    <h2 style="color: white">回复内容：</h2>
+    <hr style="border:1px solid #ccc; width:100%; margin-top: 5px"/>
+
+    <div style="display: none">
+    <div id="answer">
+        <span id="resId" style="display: none"></span>
+	<img id="txt" src='' style="width: 35px;height: 35px;border-radius:50%;">
+        <span id="resContent" style="font-family:楷体;color: white"></span><span id="zuijia"><img src="images/zuijia.png" style="width: 35px;height: 35px;margin-left: 5px"><span style="color: orangered;font-size:5px;font-family:微软雅黑">最佳答案奖励已发送</span></span><br>
+
+        <span style="color: white;font-size:5px;font-family:微软雅黑">回答者：<span id="resName"></span></span>
+        <span style="margin-left: 50px;color: white">发布于：<span id="resDate"></span></span>                    <button type="button" class="btn btn-danger button" id="best">设为最佳</button><br/>
+
+        <a class="c">
+            <span class="glyphicon glyphicon-thumbs-down" style="float: right;margin-right: 18px;cursor: pointer;color: white" id="cai11">踩<sup style="color: black" id="cai1"></sup></span>
+        </a>
+        <a class="z">
+            <span class="glyphicon glyphicon-thumbs-up" style="float: right;margin-right: 18px;cursor: pointer;color: white" id="zan11">赞<sup style="color: black" id="zan1"></sup>
+            </span>
+        </a>
+        <hr style="border:1px solid #ccc; width:100%; margin-top: 5px"/>
+    </div>
+    </div>
+    <div id="mpbox" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<a href="#top" target="_self" class="navbar-fixed-bottom" style="margin-bottom: 70px;margin-left: 80%" id="back-to-top"><img src="images/hh.png" id="hh"></a>
+<div id="bottom"  class="navbar navbar-default navbar-fixed-bottom">
+    <div role="navigation">
+        <ul class="nav nav-tabs" id="bot">
+            <li><a href="index.html" ><span><img src="images/shouye.png"></span><span>首页</span></a></li>
+            <li><a href="topicPage.html"><span><img src="images/remen.png"></span><span>话题</span></a></li>
+            <li><a href="putQuestion.html"><span><img src="images/sixing.png"></span><span>提问</span></a></li>
+            <li><a href="personalInfo.html"><span><img src="images/more.png"></span><span>资料</span></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="js/bootstrap.js"></script>
+<script src="huifuList.js"></script>
+<script src="answer.js"></script>
+<script src="boots.js"></script>
+</body>
+</html>

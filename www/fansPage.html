@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的粉丝</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+    <style>
+        #top{
+            width: 80%;
+            height: 60px;
+            margin: 0 auto;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            text-align:center;
+            line-height: 80px;
+            font:40px bold ;
+            color:white
+        }
+        #middle{
+            width: 80%;
+            margin: 15px auto;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+        input{
+            border: 0px;background-color:ghostwhite;
+            text-align: center;width: 100%;
+
+        }
+        #libiao{
+            color:white;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<div id="top">我的粉丝</div>
+<div id="middle">
+    <span id="libiao">您的粉丝列表：</span>
+    <table class="table  table-hover table-bordered" style="text-align: center">
+        <tbody>
+        <tr id="mingpian">
+            <td id="fansId">粉丝名</td>
+            <td id="chakan">查看</td>
+            <td id="bgzId" style="display: none"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="bottom"  class="navbar navbar-default navbar-fixed-bottom ">
+    <div role="navigation">
+        <ul class="nav nav-tabs" id="bot">
+            <li><a href="index.html" ><span><img src="images/shouye.png"></span><span>首页</span></a></li>
+            <li><a href="topicPage.html"><span><img src="images/remen.png"></span><span>话题</span></a></li>
+            <li><a href="putQuestion.html"><span><img src="images/sixing.png"></span><span>提问</span></a></li>
+            <li><a href="personalInfo.html"><span><img src="images/more.png"></span><span>资料</span></a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="fansPage.js"></script>
+<script src="boots.js"></script>
+</body>
+</html>

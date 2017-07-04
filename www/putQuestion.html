@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            text-align: center;
+        }
+
+    </style>
+    <title>提问</title>
+    <script type="text/javascript">
+        function textName(){
+
+            var question=document.getElementById("area").value;
+            var nameDiv=document.getElementById("nameDiv");
+
+            if(0==question.length){
+                nameDiv.innerHTML="提示：问题不能为空！";
+                return false;
+            }
+            nameDiv.innerHTML="";
+        }
+        function jinbiNum(){
+            var jinbi=document.getElementById("jinbi").value;
+			var kyjinbi=$('#kyjinbi').text();
+            var jinbiDiv=document.getElementById("jinbiDiv");
+			//console.log(kyjinbi)
+            if(parseInt(jinbi)!=jinbi){
+                jinbiDiv.innerHTML="提示：请输入整金币数，0金币可提问哦！";
+                return false;
+            }
+			else if(jinbi<0 || parseInt(kyjinbi)<parseInt(jinbi)){
+                jinbiDiv.innerHTML="提示：金币不足，可给0金币可提问哦！";
+                return false;
+            }
+			jinbiDiv.innerHTML=" ";
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 ptl" id="con">
+            <div >
+                <div style="height: 40px" id="color">
+                    <span style=" font-family: 微软雅黑;font-size: 25px;font-weight: bold;color:#2e6da4;line-height: 40px;color: white">请填写你要提问的问题：</span>
+                </div>
+                <table class="table  table-bordered">
+				    <tr>
+					    <td><span  style="font-family: 楷体; color: white">可用金币：</span></td>
+						<td><span id="kyjinbi"  style="font-family: 微软雅黑;color: white"></span></td>
+					</tr>
+                    <tr>
+                        <td colspan="1"><span  style="font-family: 楷体;color: white">奖赏金币：</span></td><td><input id="jinbi" onblur="jinbiNum()" onmouseover="jinbiNum()"><div id="jinbiDiv" style="font-family: 楷体;color: white;font-size:10px"></div></span></td>
+                    </tr>
+                    <tr >
+                        <td><span style="font-family: 楷体;color: white">技术方向：</span></td>
+                        <td><select  style="width: 174px;height: 27px;" id="menu" >
+                            <optgroup>
+                                <option value="1">html</option>
+                                <option value="2">css</option>
+                                <option value="3">mysql</option>
+                                <option value="4">jquery</option>
+                                <option value="5">java</option>
+                                <option value="6">ios</option>
+                                <option value="6">社团</option>
+                            </optgroup>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-family:楷体; ;color: white">问题标题：</span></td>
+                        <td><input type="text" id="area" onblur="textName()" onmouseover="textName()"><div id="nameDiv" style="font-family: 楷体;color: white;font-size:10px"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-xs-4"><span style="font-family:楷体;color: white" >问题描述：</span></td>
+                        <td class="col-xs-8"><textarea style="height:200px;width:80%" id="miaoshu"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-family:楷体; color: white" >上传文件：</span></td>
+                        <td><button id="shangchuan" class="btn danger-btn">上传文件</button>
+                            <div style="width:200px;margin:12px;background:gray;margin: 0 auto">
+                            <div id='wancheng' style="background:green;width:0">0%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button style="background:#1cbbb4;color:#fff;" type="submit" class="btn btn-fat btn-large" id="submit">确定</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bottom"  class="navbar navbar-default navbar-fixed-bottom">
+    <div role="navigation">
+        <ul class="nav nav-tabs" id="bot">
+            <li><a href="index.html" ><span><img src="images/shouye.png"></span><span>首页</span></a></li>
+            <li><a href="topicPage.html"><span><img src="images/remen.png"></span><span>话题</span></a></li>
+            <li><a href="putQuestion.html"><span><img src="images/sixing.png"></span><span>提问</span></a></li>
+            <li><a href="personalInfo.html"><span><img src="images/more.png"></span><span>资料</span></a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="questionPage.js"></script>
+<script src="boots.js"></script>
+<script src="gongyong.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

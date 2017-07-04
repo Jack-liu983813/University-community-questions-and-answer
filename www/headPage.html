@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>头部导航</title>
+    <style>
+        @media screen and (max-width:768px){
+            #two{
+                display:none;
+            }}
+    </style>
+</head>
+<body>
+
+<div class=" navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header" style="height: 30px">
+        <div class="col-xs-12 input-group">
+            <input type="text" class="form-control text-center" placeholder="搜索类型或提问者" style="z-index: 5" id="content">
+            <span class="input-group-btn">
+                <button id="search" class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+            </span>
+        </div>
+        <div class="row">
+    <div style="width: 100%" class="col-xs-12 input-group" id="two">
+        <ul class="breadcrumb">
+            <li><a href="index.html" target="_parent">
+                <button type="button" class="btn btn-primary btn-md">首页
+                </button>
+            </a></li>
+            <li><a href="putQuestion.html" target="_parent">
+                <button type="button" class="btn btn-primary btn-md">提问
+                </button>
+            </a></li>
+
+            <li><a href="topicPage.html" target="_parent">
+                <button type="button" class="btn btn-primary btn-md">话题
+                </button>
+            </a></li>
+            <li><a href="skt.html" target="_parent">
+                <button type="button" class="btn btn-primary btn-md">专家聊天室
+                </button>
+            </a></li>
+            <li><a href="personalInfo.html" target="_parent">
+                <button type="button" class="btn btn-primary btn-md">我的
+                </button>
+            </a></li>
+        </ul>
+    </div>
+        </div>
+</div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+<script src="head.js"></script>
+<script src="boots.js"></script>
+</body>
+</html>
